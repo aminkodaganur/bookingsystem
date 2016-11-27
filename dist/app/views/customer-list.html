@@ -1,0 +1,33 @@
+<section class="containt-section pull-down">
+	
+	<div class="ui container">
+		
+		<div class="ui main segment">						
+			<h3 class="ui header">List of customers booking</h3>
+			<div class="ui divider"></div>
+				<table class="ui celled table">
+					<thead>
+						<tr>
+							<th>Name</th>
+							<th>No of seat(s)</th>
+							<th>Seat number(s)</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr ng-repeat="(key, value) in custList">
+							<td>{{value.name}}</td>
+							<td>{{value.no_of_seats}}</td>
+							<td>{{value.seats_no}}</td>
+						</tr>
+					</tbody>
+				</table>
+
+				<br>		
+				<a class="pull-text-center" style="display: block;" ui-sref="home">Booking seat(s) >></a>
+			<div class="ui divider"></div>	
+			<p class="pull-text-center">See my other work @ <a href="https://github.com/aminkodaganur" target="_blank">github</a> </p>
+		</div>
+
+	</div>
+	
+</section>

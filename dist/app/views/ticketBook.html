@@ -1,0 +1,76 @@
+<section class="containt-section pull-down">
+	
+	<div class="ui container">
+		
+		<div class="ui main segment">						
+			<h3 class="ui header">Choose your seat:</h3>
+			<div class="ui divider"></div>
+				<div class="ui grid">
+					<div class="twelve wide computer sixteen wide tablet column">
+						<div class="holder">
+							
+							<div class="screen">Screen is this side</div>
+							
+							<div class="seats-container">
+								<div class="ui grid pull-text-center">
+									<div class="one wide column"></div>
+									<div ng-class="($index==4) ? 'two wide column pull-text-left' : 'one wide column'" ng-repeat="(colkey, colvalue) in col_name">
+										{{colvalue}}
+									</div>
+								</div>
+
+								<div ng-class="($index==4) ? 'ui grid bottom-margin' : 'ui grid'" ng-repeat="(rowkey, rowvalue) in row_name">
+									<div class="one wide column">
+										{{rowvalue}}
+									</div>
+									<div ng-class="($index==4) ? 'two wide column' : 'one wide column'" ng-repeat="(colkey, colvalue) in col_name">
+										<div ng-class="(res[$parent.$index].indexOf($index) > -1 ) ? 'booked seat' : 'seat cursor' " ng-click="bookSeat($parent.$index,$index,$event)"></div>
+									</div>							
+								</div>
+
+							</div>
+
+						</div>						
+					</div>
+					<div class="four wide computer sixteen wide tablet  column">
+						<div class="notations">
+							<div class="item">
+								<span class="empty-seat booked"></span> <span class="notation-label">Reserved Seats</span>
+							</div>
+							<div class="item">
+								<span class="empty-seat temp-booked-seat"></span> <span class="notation-label">Booked Seats</span>
+							</div>
+							<div class="item">
+								<span class="empty-seat"></span> <span class="notation-label">Empty Seats</span>
+							</div>
+						</div>
+						<br>
+						<div class="ui divider"></div>
+						<h4>Current Booked Seats:</h4>
+						<p>{{booked_seat_output}}</p>
+						<div class="ui divider"></div>
+						<button class="ui big red right labeled icon button" ng-click="confirmBooking()">				
+							Confirm Now
+							<i class="right arrow icon"></i>
+						</button>
+						<div class="ui divider"></div>
+						<br>
+						<div class="ui grid" ng-if="errorMsg">
+							<div class="sixteen wide column">
+								<div class="ui negative message transition">
+									<div class="header">
+										{{errorMsg}}
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+  				</div>
+			<div class="ui divider"></div>
+			<p class="pull-text-center">See my other work @ <a href="https://github.com/aminkodaganur" target="_blank">github</a> </p>
+
+		</div>
+
+	</div>
+	
+</section>

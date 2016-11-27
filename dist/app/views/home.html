@@ -1,0 +1,65 @@
+<section class="containt-section pull-down">
+	
+	<div class="ui container">
+		
+		<div class="ui main segment">						
+			<h3 class="ui header">Please Enter Below Details:</h3>
+			<div class="ui divider"></div>
+				<div class="holder">
+					<div class="ui form bottom-margin">
+						<div class="ui grid">
+							<div class="six wide column">
+								<div class="field">
+									<label>Enter Your Name</label>
+									<input type="text" name="first-name" placeholder="Full Name" ng-model="custName">
+								</div>
+							</div>
+							<div class="six wide column">
+								<div class="field">
+									<label>Select No. of Seats</label>
+									<select class="ui fluid dropdown" dropdown  ng-model="seats">
+										<option value="">--- Select ---</option>
+										<option value="1">1</option>
+										<option value="2">2</option>	
+										<option value="3">3</option>	
+										<option value="4">4</option>	
+										<option value="5">5</option>									    
+										<option value="6">6</option>	
+										<option value="7">7</option>	
+										<option value="8">8</option>	
+										<option value="9">9</option>
+										<option value="10">10</option>	
+									</select>
+								</div>
+							</div>
+							<div class="four wide column">
+									<br>
+								<!-- <div class="right-floated"> -->
+									<button class="ui big fluid red right labeled icon button" ng-click="procedeToNext()">				
+										Next
+										<i class="right arrow icon"></i>
+									</button>				
+								<!-- </div> -->
+							</div>
+						</div>
+					</div>			
+					<br>		
+					<a class="pull-text-center" style="display: block;" ui-sref="customer-list">View customer booking list >></a>
+					<div class="ui centered grid" ng-if="errorMsg">
+						<div class="twelve wide column">
+							<div class="ui negative message transition">
+								<div class="header">
+									{{errorMsg}}
+								</div>
+							</div>
+						</div>
+					</div>
+
+				</div>
+			<div class="ui divider"></div>	
+			<p class="pull-text-center">See my other work @ <a href="https://github.com/aminkodaganur" target="_blank">github</a> </p>
+		</div>
+
+	</div>
+	
+</section>
