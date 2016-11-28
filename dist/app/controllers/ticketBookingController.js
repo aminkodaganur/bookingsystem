@@ -26,7 +26,13 @@ bookMyShow.controller('ticketBookingController', ['$scope','dataService','$state
 			}
 		}	
 
-		if(temp_booked_seat_count==max_seat){
+		if((row in temp_booked_seat)){
+			if(temp_booked_seat[row].indexOf(col) > -1){
+				return false;
+			}
+		}
+
+		if(temp_booked_seat_count == max_seat){
 			temp_booked_seat = {};
 			temp_booked_seat_count = 0;
 			$scope.booked_seat_output = "";
